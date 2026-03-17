@@ -86,4 +86,4 @@ I used ChatGPT selectively to accelerate my workflow on specific tricky tasks, s
 
   -Debugging Jest tests for hooks with AppState and ref issues
 
-  -AI helped me prototype solutions faster and explore edge cases more efficiently, but I reviewed, adapted, and implemented every line that ended up in the final app.
+AI helped me prototype solutions faster and explore edge cases more efficiently, but I reviewed, adapted, and implemented every line that ended up in the final app.
