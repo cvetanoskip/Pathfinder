@@ -87,3 +87,12 @@ I used ChatGPT selectively to accelerate my workflow on specific tricky tasks, s
   -Debugging Jest tests for hooks with AppState and ref issues
 
 AI helped me prototype solutions faster and explore edge cases more efficiently, but I reviewed, adapted, and implemented every line that ended up in the final app.
+
+## Biggest Challenge During "Vibe Coding"
+
+The hardest part was making background tracking feel truly reliable on Android while staying within Expo's constraints.
+
+- Expo's `expo-sensors` Pedometer doesn't deliver real-time updates in the background (OS limitation, not a bug), so I had to design and implement a hybrid step-counting system: hardware pedometer when the app is in foreground + accurate GPS-based estimation when backgrounded.
+- Writing solid Jest tests for these hooks was challenging: mocking native modules, simulating AppState transitions without flakiness, capturing task executors, and testing ref-based accumulated state correctly.
+
+Solving these taught me a ton about Expo's native bridge, React refs vs state, and how to test asynchronous platform-specific code. It also forced me to prioritize clean architecture and defensive programming so the app wouldn't silently fail when the user locks their phone mid-run.
