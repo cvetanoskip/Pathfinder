@@ -1,6 +1,6 @@
 import { calculateDistance } from "../../utils/haversine";
 
-const MIN_MOVE = 0.002;
+const MIN_MOVE = 0.0025;
 const MAX_MOVE = 0.2;
 
 const leftoverDistanceRef: { current: number } = { current: 0 };

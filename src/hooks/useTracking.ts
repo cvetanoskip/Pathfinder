@@ -187,7 +187,7 @@ export const useTracking = () => {
           if (!isRegistered) {
             await Location.startLocationUpdatesAsync(BACKGROUND_LOCATION_TASK, {
               accuracy: Location.Accuracy.High,
-              distanceInterval: 1,
+              distanceInterval: 2,
               timeInterval: 1000,
               foregroundService: {
                 notificationTitle: "PathFinder",
@@ -207,7 +207,7 @@ export const useTracking = () => {
     watcherRef.current = await Location.watchPositionAsync(
       {
         accuracy: Location.Accuracy.High,
-        distanceInterval: 1,
+        distanceInterval: 2,
         timeInterval: 1000,
       },
       (loc) => {
