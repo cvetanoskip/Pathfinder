@@ -25,46 +25,62 @@ Mobile app for tracking routes (GPS path + distance + duration + pace) and estim
    ```env
    EXPO_PUBLIC_MAPTILER_KEY=pk.yourlongkeyhere...
    ```
-2. Install dependencies
+## 2. Install dependencies
 ```bash
   npm install
 ```
-3. Quick test with sideloaded APK (recommended for reviewers – no computer needed after build)
+## 3. Quick test with sideloaded APK (recommended for reviewers – no computer needed after build)
 You need Android Studio to build the APK once.
 
-Run this command (first time may take 5–15 minutes – it sets up the custom dev client):
-```bash
- npx expo run:android --variant debug --no-install
+This project provides a release APK that works fully standalone (no USB or development server required).
+
+Build the release APK:
+
+From the project root:
 ```
-### Find the APK here:
-Windows: android\app\build\outputs\apk\debug\app-debug.apk
+cd android
+.\gradlew assembleRelease   # Windows
+# or
+./gradlew assembleRelease   # macOS/Linux
+```
+**Find the APK here:**
 
-macOS/Linux: android/app/build/outputs/apk/debug/app-debug.apk
+Windows: android\app\build\outputs\apk\release\app-release.apk
 
-Transfer the app-debug.apk to your Android phone (email, Telegram, Google Drive, USB, etc.)
+macOS/Linux: android/app/build/outputs/apk/release/app-release.apk
 
+**Install on your Android device:**
 
-On the phone:
+Transfer the APK to your phone (USB, email, Google Drive, etc.)
 
-Enable "Install unknown apps" for your file manager/browser
+Enable "Install unknown apps" if prompted
 
 Tap the APK file → Install
 
-Open "PathFinder" app
+Open PathFinder
 
-Grant location permissions ("Allow all the time" for background tracking)
+**Required permissions:**
 
-Grant physical activity permission (needed for step counting on supported devices)
+Grant Location permission → “Allow all the time” (for background tracking)
 
-Start tracking → it works fully standalone (no USB or computer needed)
+Grant Physical Activity permission (for step counting on supported devices)
 
-4. Live development / debugging (optional – needs phone connected)
+**Run:**
+
+Start tracking → the app works fully standalone (no USB or computer needed)
+
+## 4. Live development / debugging (optional – needs phone connected)
 
 Connect Android phone via USB (enable Developer options → USB debugging)
 Run:
 ```bash
-npx expo run:android → Builds/installs + opens Metro bundler → hot reloading works
+npx expo run:android
 ```
+-Builds and installs the app
+
+-Starts the Metro bundler
+
+-Enables hot reloading
 
 ## AI Tools Used & How They Helped
 
